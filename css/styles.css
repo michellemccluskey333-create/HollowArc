@@ -74,39 +74,24 @@ a {
   position: relative;
   display: inline-flex;
   align-items: center;
-  width: 150px;
+  width: 170px;
   text-decoration: none;
-  transform-origin: top left;
-  transition:
-    width 0.45s ease,
-    transform 0.45s ease,
-    filter 0.45s ease;
 }
 
 .brand-text-wrap {
   display: block;
   width: 100%;
-  padding: 6px;
-  border-radius: 999px;
-  background: radial-gradient(
-    circle at 50% 78%,
-    rgba(232, 222, 208, 0.16),
-    rgba(185, 147, 90, 0.08) 42%,
-    transparent 72%
-  );
+  padding: 0;
+  background: transparent;
   filter:
-    drop-shadow(0 0 14px rgba(232, 222, 208, 0.16))
-    drop-shadow(0 0 34px rgba(185, 147, 90, 0.18));
-  transition:
-    filter 0.45s ease,
-    background 0.45s ease,
-    padding 0.45s ease;
+    drop-shadow(0 0 10px rgba(232, 222, 208, 0.22))
+    drop-shadow(0 0 26px rgba(185, 147, 90, 0.22));
 }
 
 .brand-logo {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
 }
 
 body.has-scrolled .brand {
