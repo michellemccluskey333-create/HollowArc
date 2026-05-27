@@ -29,6 +29,10 @@ body {
   font-family: var(--sans);
 }
 
+body.nav-open {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -53,26 +57,45 @@ a {
 }
 
 .brand {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 14px;
+  width: min(32vw, 300px);
   text-decoration: none;
+  filter:
+    drop-shadow(0 0 10px rgba(232, 222, 208, 0.14))
+    drop-shadow(0 0 34px rgba(185, 147, 90, 0.16));
+  transform-origin: top left;
+  transition:
+    width 0.55s ease,
+    filter 0.55s ease,
+    transform 0.55s ease;
 }
 
-.brand-mark {
-  width: 28px;
-  height: 28px;
-  border: 1.5px solid var(--cream);
-  border-bottom-color: transparent;
-  border-left-color: var(--gold);
+body.has-scrolled .brand {
+  width: min(20vw, 180px);
+  filter: drop-shadow(0 0 9px rgba(232, 222, 208, 0.1));
+}
+
+.brand-logo {
+  width: 100%;
+  height: auto;
+}
+
+.brand-crescent-glow {
+  position: absolute;
+  top: 9%;
+  left: 34.5%;
+  width: 37%;
+  aspect-ratio: 1;
+  border: 3px solid transparent;
+  border-top-color: rgba(255, 246, 220, 0.98);
+  border-left-color: rgba(185, 147, 90, 0.94);
   border-radius: 50%;
-}
-
-.brand-text {
-  font-family: var(--serif);
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  font-size: 0.82rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(-34deg);
+  animation: crescentNeonArrival 2.8s ease 0.15s forwards;
 }
 
 .site-nav {
@@ -442,6 +465,14 @@ textarea:focus {
     display: flex;
   }
 
+  .brand {
+    width: min(44vw, 240px);
+  }
+
+  body.has-scrolled .brand {
+    width: min(34vw, 165px);
+  }
+
   .intro,
   .split {
     grid-template-columns: 1fr;
@@ -471,9 +502,12 @@ textarea:focus {
     padding: 18px 6vw;
   }
 
-  .brand-text {
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
+  .brand {
+    width: min(56vw, 215px);
+  }
+
+  body.has-scrolled .brand {
+    width: min(43vw, 155px);
   }
 
   .hero {
@@ -490,5 +524,60 @@ textarea:focus {
 
   .button {
     width: 100%;
+  }
+}
+
+@keyframes crescentNeonArrival {
+  0% {
+    opacity: 0;
+    filter:
+      drop-shadow(0 0 0 rgba(255, 246, 220, 0))
+      drop-shadow(0 0 0 rgba(185, 147, 90, 0));
+  }
+
+  18% {
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 8px rgba(255, 246, 220, 1))
+      drop-shadow(0 0 24px rgba(185, 147, 90, 0.92))
+      drop-shadow(0 0 58px rgba(79, 127, 159, 0.48));
+  }
+
+  48% {
+    opacity: 0.66;
+    filter:
+      drop-shadow(0 0 5px rgba(255, 246, 220, 0.72))
+      drop-shadow(0 0 18px rgba(185, 147, 90, 0.62))
+      drop-shadow(0 0 42px rgba(79, 127, 159, 0.28));
+  }
+
+  76% {
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 9px rgba(255, 246, 220, 0.96))
+      drop-shadow(0 0 30px rgba(185, 147, 90, 0.82))
+      drop-shadow(0 0 72px rgba(79, 127, 159, 0.42));
+  }
+
+  100% {
+    opacity: 0;
+    filter:
+      drop-shadow(0 0 4px rgba(255, 246, 220, 0))
+      drop-shadow(0 0 12px rgba(185, 147, 90, 0));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .brand-crescent-glow {
+    display: none;
   }
 }
