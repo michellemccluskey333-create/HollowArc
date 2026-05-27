@@ -56,46 +56,67 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
-.brand {
-  position: relative;
+.site-header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  width: min(32vw, 300px);
-  text-decoration: none;
-  filter:
-    drop-shadow(0 0 10px rgba(232, 222, 208, 0.14))
-    drop-shadow(0 0 34px rgba(185, 147, 90, 0.16));
-  transform-origin: top left;
-  transition:
-    width 0.55s ease,
-    filter 0.55s ease,
-    transform 0.55s ease;
+  padding: 14px 7vw;
+  background: rgba(7, 8, 8, 0.72);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
 }
 
-body.has-scrolled .brand {
-  width: min(20vw, 180px);
-  filter: drop-shadow(0 0 9px rgba(232, 222, 208, 0.1));
+.brand {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 150px;
+  text-decoration: none;
+  transform-origin: top left;
+  transition:
+    width 0.45s ease,
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.brand-text-wrap {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at 50% 78%,
+    rgba(232, 222, 208, 0.16),
+    rgba(185, 147, 90, 0.08) 42%,
+    transparent 72%
+  );
+  filter:
+    drop-shadow(0 0 14px rgba(232, 222, 208, 0.16))
+    drop-shadow(0 0 34px rgba(185, 147, 90, 0.18));
+  transition:
+    filter 0.45s ease,
+    background 0.45s ease,
+    padding 0.45s ease;
 }
 
 .brand-logo {
   width: 100%;
   height: auto;
+  display: block;
 }
 
-.brand-crescent-glow {
-  position: absolute;
-  top: 9%;
-  left: 34.5%;
-  width: 37%;
-  aspect-ratio: 1;
-  border: 3px solid transparent;
-  border-top-color: rgba(255, 246, 220, 0.98);
-  border-left-color: rgba(185, 147, 90, 0.94);
-  border-radius: 50%;
-  opacity: 0;
-  pointer-events: none;
-  transform: rotate(-34deg);
-  animation: crescentNeonArrival 2.8s ease 0.15s forwards;
+body.has-scrolled .brand {
+  width: 105px;
+}
+
+body.has-scrolled .brand-text-wrap {
+  padding: 2px;
+  background: transparent;
+  filter: drop-shadow(0 0 8px rgba(232, 222, 208, 0.08));
 }
 
 .site-nav {
@@ -499,15 +520,25 @@ textarea:focus {
 
 @media (max-width: 560px) {
   .site-header {
-    padding: 18px 6vw;
+    padding: 12px 6vw;
   }
 
   .brand {
-    width: min(56vw, 215px);
+    width: 120px;
   }
 
   body.has-scrolled .brand {
-    width: min(43vw, 155px);
+    width: 90px;
+  }
+
+  .brand-text-wrap {
+    padding: 4px;
+  }
+
+  body.has-scrolled .brand-text-wrap {
+    padding: 2px;
+    background: transparent;
+    filter: drop-shadow(0 0 8px rgba(232, 222, 208, 0.08));
   }
 
   .hero {
@@ -527,46 +558,6 @@ textarea:focus {
   }
 }
 
-@keyframes crescentNeonArrival {
-  0% {
-    opacity: 0;
-    filter:
-      drop-shadow(0 0 0 rgba(255, 246, 220, 0))
-      drop-shadow(0 0 0 rgba(185, 147, 90, 0));
-  }
-
-  18% {
-    opacity: 1;
-    filter:
-      drop-shadow(0 0 8px rgba(255, 246, 220, 1))
-      drop-shadow(0 0 24px rgba(185, 147, 90, 0.92))
-      drop-shadow(0 0 58px rgba(79, 127, 159, 0.48));
-  }
-
-  48% {
-    opacity: 0.66;
-    filter:
-      drop-shadow(0 0 5px rgba(255, 246, 220, 0.72))
-      drop-shadow(0 0 18px rgba(185, 147, 90, 0.62))
-      drop-shadow(0 0 42px rgba(79, 127, 159, 0.28));
-  }
-
-  76% {
-    opacity: 1;
-    filter:
-      drop-shadow(0 0 9px rgba(255, 246, 220, 0.96))
-      drop-shadow(0 0 30px rgba(185, 147, 90, 0.82))
-      drop-shadow(0 0 72px rgba(79, 127, 159, 0.42));
-  }
-
-  100% {
-    opacity: 0;
-    filter:
-      drop-shadow(0 0 4px rgba(255, 246, 220, 0))
-      drop-shadow(0 0 12px rgba(185, 147, 90, 0));
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -575,9 +566,5 @@ textarea:focus {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.001ms !important;
-  }
-
-  .brand-crescent-glow {
-    display: none;
   }
 }
