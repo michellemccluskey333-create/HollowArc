@@ -3,7 +3,7 @@ const siteNav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
 
 function updateScrolledHeader() {
-  document.body.classList.toggle("has-scrolled", window.scrollY > 60);
+  document.body.classList.toggle("has-scrolled", window.scrollY > 24);
 }
 
 updateScrolledHeader();
