@@ -50,20 +50,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 7vw;
-  background: rgba(7, 8, 8, 0.72);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--line);
-}
-
-.site-header {
-  position: fixed;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 14px 7vw;
   background: rgba(7, 8, 8, 0.72);
   backdrop-filter: blur(16px);
@@ -472,11 +458,11 @@ textarea:focus {
   }
 
   .brand {
-    width: min(44vw, 240px);
+    width: 132px;
   }
 
   body.has-scrolled .brand {
-    width: min(34vw, 165px);
+     width: 98px;
   }
 
   .intro,
