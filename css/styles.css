@@ -72,8 +72,8 @@ body.has-scrolled .site-header {
 .brand {
   position: relative;
   display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-end;
+  gap: 18px;
   text-decoration: none;
   transform: translateY(22px);
   transition:
@@ -86,15 +86,14 @@ body.has-scrolled .brand {
 }
 
 .brand-mark-wrap {
-  width: 112px;
+  width: 92px;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
   border-radius: 50%;
   filter:
-    drop-shadow(0 0 18px rgba(232, 222, 208, 0.28))
-    drop-shadow(0 0 48px rgba(185, 147, 90, 0.28))
-    drop-shadow(0 0 70px rgba(79, 127, 159, 0.16));
+    drop-shadow(0 0 14px rgba(232, 222, 208, 0.28))
+    drop-shadow(0 0 38px rgba(185, 147, 90, 0.22));
   transition:
     width 0.45s ease,
     filter 0.45s ease;
@@ -112,11 +111,12 @@ body.has-scrolled .brand-mark-wrap {
 }
 
 .brand-name {
-  color: var(--cream);
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
-  text-transform: none;
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 300;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: #e2ddd5;
   opacity: 0;
   transform: translateX(-8px);
   transition:
@@ -190,17 +190,6 @@ body.has-scrolled .brand-name {
   text-align: center;
 }
 
-.arc-symbol {
-  width: 190px;
-  height: 190px;
-  margin: 0 auto 36px;
-  border: 3px solid var(--cream);
-  border-bottom-color: transparent;
-  border-left-color: var(--gold);
-  border-radius: 50%;
-  opacity: 0.95;
-  box-shadow: 0 0 38px rgba(232, 222, 208, 0.08);
-}
 
 .eyebrow {
   margin: 0 0 18px;
