@@ -45,7 +45,7 @@ body {
 /* Floating logo stack, separate from the header layout */
 .floating-brand {
   position: fixed;
-  top: 18px;
+  top: 24px;
   left: 7vw;
   z-index: 10000;
   display: inline-flex;
@@ -60,7 +60,7 @@ body {
 
 /* Shrinks logo after scrolling */
 body.has-scrolled .floating-brand {
-  transform: scale(1.25);
+    transform: scale(1.25) translateY(-10px);
 }
 
 /* Arc image */
