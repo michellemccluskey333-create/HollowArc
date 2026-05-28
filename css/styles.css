@@ -18,12 +18,15 @@ body {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
   min-height: 82px;
   display: flex;
   align-items: center;
+  overflow: hidden;
   justify-content: space-between;
   padding: 14px 7vw;
   background: rgba(7, 8, 8, 0.92);
@@ -80,5 +83,24 @@ body.has-scrolled .brand {
 
 .test-space {
   min-height: 200vh;
-  padding: 120px 7vw;
+  padding: 140px 7vw;
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    gap: 18px;
+  }
+
+  .site-nav a {
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+  }
+
+  .brand {
+    transform: scale(1.12) translateY(8px);
+  }
+
+  body.has-scrolled .brand {
+    transform: scale(0.9) translateY(0);
+  }
 }
