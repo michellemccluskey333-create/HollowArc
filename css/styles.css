@@ -56,6 +56,10 @@ body {
   transform: scale(2.0);
   transform-origin: top left;
   transition: transform 0.45s ease;
+  filter:
+    drop-shadow(0 0 18px rgba(232, 222, 208, 0.22))
+    drop-shadow(0 0 42px rgba(185, 147, 90, 0.18))
+    drop-shadow(0 0 70px rgba(79, 127, 159, 0.10));
 }
 
 /* Shrinks logo after scrolling */
@@ -63,9 +67,12 @@ body.has-scrolled .floating-brand {
   flex-direction: row;
   gap: 14px;
   transform: scale(0.92) translateY(-10px);
+  filter:
+    drop-shadow(0 0 8px rgba(232, 222, 208, 0.12))
+    drop-shadow(0 0 20px rgba(185, 147, 90, 0.10));
 }
 
-body.has-scrolled .floating-brand-mark {
+/*body.has-scrolled .floating-brand-mark {
   width: 52px;
   height: 52px;
   transform: none;
@@ -73,7 +80,7 @@ body.has-scrolled .floating-brand-mark {
 body.has-scrolled .floating-brand-name {
   font-size: 0.78rem;
   letter-spacing: 0.34em;
-}
+} */
 
 /* Arc image */
 .floating-brand-mark {
