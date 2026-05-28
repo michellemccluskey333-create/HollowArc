@@ -34,22 +34,26 @@ body {
   backdrop-filter: blur(14px);
 }
 
-.brand {
+.floating-brand {
+  position: fixed;
+  top: 28px;
+  left: 7vw;
+  z-index: 10000;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 0;
   text-decoration: none;
-  transform: scale(1.55) translateY(22px);
+  transform: scale(1.2);
   transform-origin: top left;
   transition: transform 0.45s ease;
 }
 
-body.has-scrolled .brand {
-  transform: scale(1.15) translateY(0);
+body.has-scrolled .floating-brand {
+  transform: scale(0.82);
 }
 
-.brand-mark {
+.floating-brand-mark {
   width: 78px;
   height: 78px;
   object-fit: contain;
@@ -59,7 +63,7 @@ body.has-scrolled .brand {
     drop-shadow(0 0 28px rgba(185, 147, 90, 0.18));
 }
 
-.brand-name {
+.floating-brand-name {
   font-family: "Cinzel", Georgia, serif;
   font-size: 0.7rem;
   font-weight: 400;
