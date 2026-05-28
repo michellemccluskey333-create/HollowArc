@@ -64,8 +64,8 @@ body {
 
 /* Shrinks logo after scrolling */
 body.has-scrolled .floating-brand {
-  flex-direction: row;
-  gap: 14px;
+ /* flex-direction: row;
+  gap: 14px; */
   transform: scale(0.92) translateY(-10px);
   filter:
     drop-shadow(0 0 8px rgba(232, 222, 208, 0.12))
