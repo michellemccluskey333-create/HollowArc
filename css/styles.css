@@ -53,14 +53,14 @@ body {
   align-items: center;
   gap: 0;
   text-decoration: none;
-  transform: scale(1.25);
+  transform: scale(2.0);
   transform-origin: top left;
   transition: transform 0.45s ease;
 }
 
 /* Shrinks logo after scrolling */
 body.has-scrolled .floating-brand {
-  transform: scale(0.92);
+  transform: scale(1.25);
 }
 
 /* Arc image */
