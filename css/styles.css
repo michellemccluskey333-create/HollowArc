@@ -64,15 +64,15 @@ body {
 
 /* Shrinks logo after scrolling */
 body.has-scrolled .floating-brand {
- /* flex-direction: row;
-  gap: 14px; */
+  flex-direction: row;
+  gap: 14px; 
   transform: scale(0.92) translateY(-10px);
   filter:
     drop-shadow(0 0 10px rgba(232, 222, 208, 0.18))
     drop-shadow(0 0 24px rgba(185, 147, 90, 0.14));
 }
 
-/*body.has-scrolled .floating-brand-mark {
+body.has-scrolled .floating-brand-mark {
   width: 52px;
   height: 52px;
   transform: none;
@@ -80,7 +80,7 @@ body.has-scrolled .floating-brand {
 body.has-scrolled .floating-brand-name {
   font-size: 0.78rem;
   letter-spacing: 0.34em;
-} */
+} 
 
 /* Arc image */
 .floating-brand-mark {
