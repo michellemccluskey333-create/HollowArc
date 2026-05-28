@@ -60,7 +60,19 @@ body {
 
 /* Shrinks logo after scrolling */
 body.has-scrolled .floating-brand {
-    transform: scale(.92) translateY(-20px);
+  flex-direction: row;
+  gap: 14px;
+  transform: scale(0.92) translateY(-10px);
+}
+
+body.has-scrolled .floating-brand-mark {
+  width: 52px;
+  height: 52px;
+  transform: none;
+}
+body.has-scrolled .floating-brand-name {
+  font-size: 0.78rem;
+  letter-spacing: 0.34em;
 }
 
 /* Arc image */
