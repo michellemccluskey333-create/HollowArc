@@ -1,4 +1,5 @@
 :root {
+  /* Reusable color variables */
   --black: #070808;
   --cream: #e8ded0;
   --muted: rgba(232, 222, 208, 0.72);
@@ -6,6 +7,7 @@
   --gold: #b9935a;
 }
 
+/* Makes sizing easier: width includes padding and border */
 * {
   box-sizing: border-box;
 }
@@ -17,26 +19,33 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Fixed top navigation bar */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 9000;
   width: 100%;
   min-height: 82px;
   display: flex;
+  justify-content: flex-end; /* keeps nav on the right */
   align-items: center;
-  overflow: visible;
-  justify-content: space-between;
   padding: 14px 7vw;
   background: rgba(7, 8, 8, 0.92);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
 }
 
+/* Navigation link container */
+.site-nav {
+  display: flex;
+  gap: 34px;
+}
+
+/* Floating logo stack, separate from the header layout */
 .floating-brand {
   position: fixed;
-  top: 28px;
+  top: 26px;
   left: 7vw;
   z-index: 10000;
   display: inline-flex;
@@ -44,15 +53,17 @@ body {
   align-items: center;
   gap: 0;
   text-decoration: none;
-  transform: scale(1.2);
+  transform: scale(1.25);
   transform-origin: top left;
   transition: transform 0.45s ease;
 }
 
+/* Shrinks logo after scrolling */
 body.has-scrolled .floating-brand {
-  transform: scale(0.82);
+  transform: scale(0.92);
 }
 
+/* Arc image */
 .floating-brand-mark {
   width: 78px;
   height: 78px;
@@ -63,6 +74,7 @@ body.has-scrolled .floating-brand {
     drop-shadow(0 0 28px rgba(185, 147, 90, 0.18));
 }
 
+/* HOLLOW ARC text under the arc */
 .floating-brand-name {
   font-family: "Cinzel", Georgia, serif;
   font-size: 0.7rem;
@@ -72,11 +84,7 @@ body.has-scrolled .floating-brand {
   text-transform: uppercase;
 }
 
-.site-nav {
-  display: flex;
-  gap: 34px;
-}
-
+/* Individual nav links */
 .site-nav a {
   color: var(--muted);
   text-decoration: none;
@@ -85,11 +93,13 @@ body.has-scrolled .floating-brand {
   font-size: 0.72rem;
 }
 
+/* Temporary scroll-testing area */
 .test-space {
   min-height: 200vh;
   padding: 140px 7vw;
 }
 
+/* Tablet / smaller desktop adjustments */
 @media (max-width: 900px) {
   .site-nav {
     gap: 18px;
@@ -100,11 +110,11 @@ body.has-scrolled .floating-brand {
     letter-spacing: 0.14em;
   }
 
-  .brand {
+  .floating-brand {
     transform: scale(1.12) translateY(8px);
   }
 
-  body.has-scrolled .brand {
+  body.has-scrolled .floating-brand {
     transform: scale(0.9) translateY(0);
   }
 }
