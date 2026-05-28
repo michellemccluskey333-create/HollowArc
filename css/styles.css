@@ -57,9 +57,9 @@ body {
   transform-origin: top left;
   transition: transform 0.45s ease;
   filter:
-    drop-shadow(0 0 18px rgba(232, 222, 208, 0.22))
-    drop-shadow(0 0 42px rgba(185, 147, 90, 0.18))
-    drop-shadow(0 0 70px rgba(79, 127, 159, 0.10));
+    drop-shadow(0 0 16px rgba(232, 222, 208, 0.38))
+    drop-shadow(0 0 38px rgba(185, 147, 90, 0.32))
+    drop-shadow(0 0 80px rgba(79, 127, 159, 0.18));
 }
 
 /* Shrinks logo after scrolling */
@@ -68,8 +68,8 @@ body.has-scrolled .floating-brand {
   gap: 14px; */
   transform: scale(0.92) translateY(-10px);
   filter:
-    drop-shadow(0 0 8px rgba(232, 222, 208, 0.12))
-    drop-shadow(0 0 20px rgba(185, 147, 90, 0.10));
+    drop-shadow(0 0 10px rgba(232, 222, 208, 0.18))
+    drop-shadow(0 0 24px rgba(185, 147, 90, 0.14));
 }
 
 /*body.has-scrolled .floating-brand-mark {
