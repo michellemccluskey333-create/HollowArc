@@ -60,7 +60,7 @@ body {
 
 /* Shrinks logo after scrolling */
 body.has-scrolled .floating-brand {
-    transform: scale(1.25) translateY(-20px);
+    transform: scale(.92) translateY(-20px);
 }
 
 /* Arc image */
