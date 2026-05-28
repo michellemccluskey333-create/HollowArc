@@ -18,9 +18,11 @@ body {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
   min-height: 82px;
   display: flex;
   align-items: center;
@@ -29,6 +31,10 @@ body {
   background: rgba(7, 8, 8, 0.92);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
+}
+.test-space {
+  min-height: 200vh;
+  padding: 140px 7vw;
 }
 
 .brand {
