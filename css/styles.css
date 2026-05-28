@@ -496,13 +496,13 @@ textarea:focus {
     display: flex;
   }
 
-  .brand {
-    width: 132px;
-  }
+.brand-mark-wrap {
+  width: 86px;
+}
 
-  body.has-scrolled .brand {
-     width: 98px;
-  }
+body.has-scrolled .brand-mark-wrap {
+  width: 44px;
+}
 
   .intro,
   .split {
@@ -533,23 +533,26 @@ textarea:focus {
     padding: 12px 6vw;
   }
 
-  .brand {
-    width: 120px;
-  }
+.brand {
+  gap: 9px;
+  transform: translateY(14px);
+}
 
-  body.has-scrolled .brand {
-    width: 90px;
-  }
+body.has-scrolled .brand {
+  transform: translateY(0);
+}
 
-  .brand-text-wrap {
-    padding: 4px;
-  }
+.brand-mark-wrap {
+  width: 74px;
+}
 
-  body.has-scrolled .brand-text-wrap {
-    padding: 2px;
-    background: transparent;
-    filter: drop-shadow(0 0 8px rgba(232, 222, 208, 0.08));
-  }
+body.has-scrolled .brand-mark-wrap {
+  width: 38px;
+}
+
+.brand-name {
+  font-size: 0.95rem;
+}
 
   .hero {
     padding: 120px 6vw 70px;
